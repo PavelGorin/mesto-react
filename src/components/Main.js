@@ -49,12 +49,9 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
         </section>
 
         <section className="elements">
-
           {cards.map((item) => {
             return (<Card key={item._id} card={item} onCardClick={onCardClick} />)
           })}
-
-
         </section>
       </div>
     </>
