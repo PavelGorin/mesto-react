@@ -3,7 +3,7 @@ import avatardef from '../images/profile__avatar.jpg';
 import editbutton from '../images/profile__edit-button.svg';
 import addbutton from '../images/profile__add-button.svg';
 import { useState, useEffect } from "react";
-import { api } from '../utils/Api';
+import api from '../utils/Api';
 import Card from './Card';
 
 
