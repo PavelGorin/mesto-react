@@ -1,7 +1,7 @@
 class Api {
-  constructor(options) {
-    this._baseUrl = options.baseUrl;
-    this._headers = options.headers;
+  constructor({baseUrl, headers}) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
   }
 
   _getResponseData(res) {
@@ -9,7 +9,7 @@ class Api {
       return res.json();
     }
 
-    return Promise.reject(new Error(`Ошибка: ${res.status}`));
+    return Promise.reject(`Ошибка: ${res.status}`);
   }
 
   getUserData() {
@@ -17,12 +17,12 @@ class Api {
       .then(res => this._getResponseData(res));
   }
 
-  getInitialCardsList() {
+  getInitialCards() {
     return fetch(`${this._baseUrl}/cards`, { headers: this._headers })
       .then(res => this._getResponseData(res));
   }
 
-  updateUserData(title, subtitle) {
+  setUserInfo(title, subtitle) {
     return fetch(`${this._baseUrl}/users/me`, { 
       method: 'PATCH',
       headers: this._headers,
@@ -34,7 +34,7 @@ class Api {
       .then(res => this._getResponseData(res));
   }
 
-  sendNewCard(link, name) {
+  sendNewCard(name, link) {
     return fetch(`${this._baseUrl}/cards`, { 
       method: 'POST',
       headers: this._headers,
@@ -49,8 +49,9 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this._headers,
+      headers: this._headers
     })
+    .then(res => this._getResponseData(res));
   }
 
   setLike(cardId) {
@@ -83,6 +84,7 @@ class Api {
   handleError(err) {
     console.error(err);
   }
+
 }
 
 const api = new Api({
