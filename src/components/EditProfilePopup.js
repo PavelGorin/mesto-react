@@ -17,11 +17,7 @@ function EditProfilePopup(props) {
   const [description, setDescription] = useState('');
   const { isOpen, onClose } = props;
 
-  /*function handleChange(e) {
-    e.target.name === 'name'
-      ? setName(e.target.value)
-      : setDescription(e.target.value);
-  }*/
+
 
   function handleChangeName(e){
     setName(e.target.value)
@@ -31,16 +27,9 @@ function handleChangeDescription(e){
 }
 
 
- // const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
-
- // function closePopupEditProfile() {
-//  setIsEditProfilePopupOpen(false);
- // }
-
   function handleSubmit(e) {
     e.preventDefault();
-  
-    // Передаём значения управляемых компонентов во внешний обработчик
+
     props.onUpdateUser({
       name,
       about: description,

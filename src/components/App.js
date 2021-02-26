@@ -58,7 +58,7 @@ function App() {
     api.sendNewCard(name, link)
       .then((newCard) => {
         setCards([newCard, ...cards]);
-        //closeAllPopups();
+
       })
       .catch((err) => { console.log(err) });
   }
@@ -117,8 +117,6 @@ function App() {
         <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar}/>
         <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
         <AddPlacePopup onAddPlace={handleAddPlaceSubmit} isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
-        
-
         <PopupWithForm title="Вы уверены?" name="del-card" submit="Да">
         </PopupWithForm>
         <ImagePopup card={selectedCard} onClose={closeAllPopups}></ImagePopup>

@@ -1,5 +1,4 @@
 import avataredit from '../images/profile__avatar-edit.svg';
-//import avatardef from '../images/profile__avatar.jpg';
 import editbutton from '../images/profile__edit-button.svg';
 import addbutton from '../images/profile__add-button.svg';
 import Card from './Card';
@@ -8,11 +7,8 @@ import {useContext} from 'react';
 
 function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick, cards, onCardLike, onCardDelete, }) {
 
-//  const { onEditAvatar, onEditProfile, onAddPlace, onCardClick, onCardLike, onCardDelete, cards} = props;
-
   const currentUser = useContext(CurrentUserContext);
 
- 
   return (
     <>
       <div className="page">
