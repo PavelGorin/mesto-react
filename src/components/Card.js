@@ -28,7 +28,7 @@ function Card({ card, onCardClick, onCardLike, onCardDelete }) {
   }
 
   return (
-    <div className="element" key={card._id}>
+    <div className="element" >
       <button className="element__picture"><img className="element__image" src={card.link} alt={card.name} onClick ={handleClick}/></button>
       <button className={cardDeleteButtonClassName} type="button" onClick={handleDeleteClick}><img src={trash}
         alt="Мусорное ведро" /></button>
