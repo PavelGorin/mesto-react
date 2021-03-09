@@ -111,7 +111,6 @@ function App() {
   }
 
   return (
-    <HashRouter>
       <div className="noclassyet">
         <CurrentUserContext.Provider value={currentUser}>
           <Header />
@@ -125,7 +124,6 @@ function App() {
           <ImagePopup card={selectedCard} onClose={closeAllPopups}></ImagePopup>
         </CurrentUserContext.Provider>
       </div>
-    </HashRouter>
   );
 }
 
