@@ -111,19 +111,21 @@ function App() {
   }
 
   return (
-    <div className="noclassyet">
-      <CurrentUserContext.Provider value={currentUser}>
-        <Header />
-        <Main cards={cards} onCardLike={handleCardLike} onCardDelete={handleCardDelete} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
-        <Footer />
-        <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
-        <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
-        <AddPlacePopup onAddPlace={handleAddPlaceSubmit} isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
-        <PopupWithForm title="Вы уверены?" name="del-card" submit="Да">
-        </PopupWithForm>
-        <ImagePopup card={selectedCard} onClose={closeAllPopups}></ImagePopup>
-      </CurrentUserContext.Provider>
-    </div>
+    <HashRouter>
+      <div className="noclassyet">
+        <CurrentUserContext.Provider value={currentUser}>
+          <Header />
+          <Main cards={cards} onCardLike={handleCardLike} onCardDelete={handleCardDelete} onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
+          <Footer />
+          <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />
+          <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
+          <AddPlacePopup onAddPlace={handleAddPlaceSubmit} isOpen={isAddPlacePopupOpen} onClose={closeAllPopups} />
+          <PopupWithForm title="Вы уверены?" name="del-card" submit="Да">
+          </PopupWithForm>
+          <ImagePopup card={selectedCard} onClose={closeAllPopups}></ImagePopup>
+        </CurrentUserContext.Provider>
+      </div>
+    </HashRouter>
   );
 }
 
