@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <HashRouter basename={/mesto-react}>
+    <HashRouter basename="/mesto-react">
       <App />
     </HashRouter>
   </React.StrictMode>,
